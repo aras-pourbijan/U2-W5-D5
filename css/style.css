@@ -33,9 +33,101 @@ p {
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: rgb(46, 45, 43);
+    background-color: rgba(53, 52, 48, 0.925);
     width: 100%;
     height: 100%;
+    padding-top: 10vh;
 }
 
 /* Start */
+
+#grid-container {
+    display: grid;
+    grid-template-columns: auto auto auto auto auto auto;
+    margin: 20px;
+}
+
+.card {
+    background-color: #fff34f;
+    border: 1px solid #3889c4;
+    border-radius: 10px;
+    width: 130px;
+    height: 130px;
+    margin: 5px;
+    font-size: 3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+button {
+    width: 100px;
+    height: 100px;
+    border: 0ch;
+    border-radius: 50%;
+    background-color: #20cbff;
+    font-size: 1.4rem;
+    font-weight: bold;
+    color: white;
+}
+
+.cyan {
+    background-color: #20cbff;
+}
+.yellow {
+}
+.green {
+    background-color: #19d832;
+}
+.violet {
+    background-color: violet;
+}
+.gray {
+    background-color: gray;
+}
+
+.show {
+    /* agganciare animation-name rotazione carta */
+    animation-name: rotazione-carta;
+    animation-duration: 0.5s;
+    background-color: violet;
+    animation-timing-function: ease-in-out;
+}
+
+.hidden {
+    animation-name: reverse-anime;
+    animation-delay: 1s;
+    animation-duration: 0.5s;
+    background-color: violet;
+    animation-timing-function: ease-in-out;
+}
+
+@keyframes rotazione-carta {
+    /* animazione quando ruota la carta */
+    from {
+        transform: rotateY(0);
+        background-color: #eeff02;
+        color: #2285cc00;
+    }
+    50% {
+        transform: rotateY(180deg);
+    }
+    to {
+        transform: rotateY(0);
+        background-color: violet;
+        color: #2285cc;
+    }
+}
+@keyframes reverse-anime {
+    /* animazione quando ruota la carta */
+    from {
+        transform: rotateY(0);
+        background-color: violet;
+    }
+    50% {
+        transform: rotateY(180deg);
+    }
+    to {
+        background-color: #eeff02;
+    }
+}
